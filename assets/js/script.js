@@ -136,8 +136,7 @@ var taskButtonHandler = function (event) {
     var taskId = targetEl.getAttribute("data-task-id");
     editTask(taskId);
   } else if (targetEl.matches(".delete-btn")) {
-    console.log("delete", targetEl);
-    var taskId = targetEl.getAttribute("data-task-id");
+       var taskId = targetEl.getAttribute("data-task-id");
     deleteTask(taskId);
   }
   saveTasks();
@@ -170,7 +169,7 @@ var taskStatusChangeHandler = function (event) {
 };
 
 var editTask = function (taskId) {
-  console.log(taskId);
+ 
 
   // get task list item element
   var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
@@ -193,7 +192,7 @@ var editTask = function (taskId) {
 };
 
 var deleteTask = function (taskId) {
-  console.log(taskId);
+  
   // find task list element with taskId value and remove it
   var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
   taskSelected.remove();
@@ -202,7 +201,7 @@ var deleteTask = function (taskId) {
 
   for (var i = 0; i < tasks.length; i++) {
     if (tasks[i].id !== parseInt(taskId)) {
-      updatedTaskArr.push(task[i]);
+      updatedTaskArr.push(tasks[i]);
     }
   }
   tasks = updatedTaskArr;
